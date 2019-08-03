@@ -304,7 +304,7 @@ def unban(bot: Bot, update: Update, args: List[str]) -> str:
         return ""
 
     chat.unban_member(user_id)
-    message.reply_text("Destiny gave you second chance. Don't waste it. 🙂")
+    message.reply_text("I'm giving you a second chance. Don't waste it. 🙂")
 
     log = "<b>{}:</b>" \
           "\n#UNBANNED" \
