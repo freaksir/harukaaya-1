@@ -56,7 +56,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
         return
 
     if int(user_id) in SUDO_USERS:
-        message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
+        message.reply_text("Owww, I see. Sudo war? seems interesting! Can you get me some bamboo sticks?")
         return
 
     if int(user_id) in SUPPORT_USERS:
@@ -64,7 +64,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
         return
 
     if user_id == bot.id:
-        message.reply_text("-_- So funny, lets gban myself why don't I? Nice try. Earth That is my price!")
+        message.reply_text("Wow, so funny. How am I supposed to gban myself?")
         return
 
     try:
@@ -96,7 +96,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
     ok123 = mention_html(user_chat.id, user_chat.first_name)
 
 
-    text12 = f"*Summoning all infinity stones* The end is near. ☠️ {ok123}."
+    text12 = f"*Summoning all the evilness* Well, here comes the end. ☠️ {ok123}."
     update.effective_message.reply_text(text12, parse_mode=ParseMode.HTML)
 
     banner = update.effective_user  # type: Optional[User]
@@ -138,7 +138,7 @@ def gban(bot: Bot, update: Update, args: List[str]):
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
                    "{} has been successfully gbanned!".format(mention_html(user_chat.id, user_chat.first_name)),
                    html=True)
-    text13 = f"Justice has been done with {ok123} 😉 'Peace'."
+    text13 = f"Justice has been done with {ok123} 😉 'HuiHui'."
     update.effective_message.reply_text(text13, parse_mode=ParseMode.HTML)
 
 
@@ -162,7 +162,7 @@ def ungban(bot: Bot, update: Update, args: List[str]):
 
     banner = update.effective_user  # type: Optional[User]
 
-    message.reply_text("I'll give {} a second chance, globally.I do not ask for your trust.I demand only your obedience.".format(user_chat.first_name))
+    message.reply_text("I'll give {} a second chance, globally.I do not ask for your trust.I demand only you following the rules.".format(user_chat.first_name))
 
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
                  "<b>Regression of Global Ban</b>" \
@@ -233,7 +233,7 @@ def check_and_ban(update, user_id, should_message=True):
     if sql.is_user_gbanned(user_id):
         update.effective_chat.kick_member(user_id)
         if should_message:
-            update.effective_message.reply_text("Again, insects, you ask what am I? What I am is angry. What I am is insane with rage!")
+            update.effective_message.reply_text("Again, what the fuck? You stupid, you shouldn't be here. You're an evil soul!")
 
 #GMUTE
 
@@ -248,7 +248,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         return
 
     if int(user_id) in SUDO_USERS:
-        message.reply_text("I spy, with my little eye... a sudo user war! Why are you guys turning on each other?")
+        message.reply_text("Owww, I see. Sudo war? seems interesting! Can you get me some bamboo sticks?")
         return
 
     if int(user_id) in SUPPORT_USERS:
@@ -256,7 +256,7 @@ def gmute(bot: Bot, update: Update, args: List[str]):
         return
 
     if user_id == bot.id:
-        message.reply_text("-_- So funny, lets gmute myself why don't I? Nice try.")
+        message.reply_text("Wow, so funny. How am I supposed to gmute myself?")
         return
 
     try:
@@ -359,7 +359,7 @@ def ungmute(bot: Bot, update: Update, args: List[str]):
 
     muter = update.effective_user  # type: Optional[User]
 
-    message.reply_text("I'll let {} speak again, globally.".format(user_chat.first_name))
+    message.reply_text("I'll let {} speak again, globally. Be sure you mind your words".format(user_chat.first_name))
 
     send_to_list(bot, SUDO_USERS + SUPPORT_USERS,
                  "{} has ungmuted user {}".format(mention_html(muter.id, muter.first_name),
@@ -438,7 +438,7 @@ def check_and_mute(bot, update, user_id, should_message=True):
     if sql.is_user_gmuted(user_id):
         bot.restrict_chat_member(update.effective_chat.id, user_id, can_send_messages=False)
         if should_message:
-            update.effective_message.reply_text("This is a bad person, I'll silence them for you!")
+            update.effective_message.reply_text("This is a bad person, I'll shut them up for you!")
 
 
 @run_async
